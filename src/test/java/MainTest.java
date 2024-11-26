@@ -519,4 +519,48 @@ public class MainTest {
         assertEquals("5^xln(5)", Main.log_rule_calc("5^x"));
     }
 
+    @Test
+    public void testAllPositiveNumbers() {
+        double[] input = {10, 20, 30, 40};
+        double expected = 77.0; // (50 + 68 + 86 + 104) / 4 = 86
+        assertEquals(expected, AverageCelsiusToFahrenheit.averageCelsiusToFahrenheit(input), 0.001);
+    }
+
+    @Test
+    public void testAllNegativeNumbers() {
+        double[] input = {-10, -20, -30};
+        double expected = -4.0; // (14 + (-4) + (-22)) / 3 = 14
+        assertEquals(expected, AverageCelsiusToFahrenheit.averageCelsiusToFahrenheit(input), 0.001);
+    }
+
+    @Test
+    public void testPositiveAndNegativeNumbers() {
+        double[] input = {-10, 0, 25, 30};
+        double expected = 52.25; // (14 + 32 + 77 + 86) / 4 = 61
+        assertEquals(expected, AverageCelsiusToFahrenheit.averageCelsiusToFahrenheit(input), 0.001);
+    }
+
+    @Test
+    public void testBMIPercentage() {
+        double weight = 70.0; // kg
+        double height = 1.75; // meters
+        double totalPopulation = 5000;
+
+        double result = BMIPercentage.calculateBMIPercentage(weight, height, totalPopulation);
+        assertEquals(0.4571428571428572, result, 0.01); // Expected percentage with a delta for precision
+    }
+
+    @Test
+    public void testValidPositiveNumbers() {
+        double[] input = {1, 2, 3, 4};
+        double expected = 33.0; // 1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33
+        assertEquals(expected, SumOfFactorials.sumOfFactorials(input), 0.001);
+    }
+
+    @Test
+    public void testInputWithZerosAndOnes() {
+        double[] input = {0, 1, 1};
+        double expected = 3.0; // 0! + 1! + 1! = 1 + 1 + 1 = 3
+        assertEquals(expected, SumOfFactorials.sumOfFactorials(input), 0.001);
+    }
 }

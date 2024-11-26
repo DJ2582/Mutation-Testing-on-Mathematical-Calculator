@@ -1,6 +1,7 @@
 package org.calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -61,7 +62,7 @@ public class Main {
             System.out.print("\n Enter your choice : ");
             int ch = sc.nextInt();
             double res = 0;
-            double num, pow,intNum1,intNum2;
+            double num, pow,intNum1,intNum2,intNum3;
             switch (ch) {
                 case (1): // Absolute Value
                     System.out.print("Enter no : ");
@@ -383,6 +384,46 @@ public class Main {
                         System.out.print("Derivative: "+ Process_log_rule.process_log_rule(function) + "\n");
 
                     }
+                case (43): // BMI Percentage Calculation
+                    System.out.print("Enter weight (in kg): ");
+                    intNum1 = sc.nextDouble();
+                    System.out.print("Enter height (in meters): ");
+                    intNum2 = sc.nextDouble();
+                    System.out.print("Enter total population: ");
+                    intNum3 = sc.nextDouble();
+                    res = BMIPercentage.calculateBMIPercentage(intNum1, intNum2, intNum3);
+                    System.out.println("The BMI percentage is: " + res);
+                    break;
+
+                case (44): // Sum of Factorials
+                    System.out.print("Enter the number of elements in the array: ");
+                    int size = sc.nextInt();
+                    double[] array = new double[size];
+                    System.out.println("Enter the elements of the array:");
+                    for (int i = 0; i < size; i++) {
+                        array[i] = sc.nextDouble();
+                    }
+                    res = SumOfFactorials.sumOfFactorials(array);
+                    break;
+
+                case (45): // Average Celsius to Fahrenheit
+                    System.out.print("Enter the number of temperatures to convert: ");
+                    int size1 = sc.nextInt();
+
+                    if (size1 <= 0) {
+                        System.out.println("Invalid input! The number of temperatures should be greater than 0.");
+                        break;
+                    }
+
+                    double[] celsiusArray = new double[size1];
+                    System.out.println("Enter the temperatures in Celsius:");
+                    for (int i = 0; i < size1; i++) {
+                        System.out.print("Temperature " + (i + 1) + ": ");
+                        celsiusArray[i] = sc.nextDouble();
+                    }
+
+                    res = AverageCelsiusToFahrenheit.averageCelsiusToFahrenheit(celsiusArray);
+                    break;
 
                 default:
                     System.out.print("Closing the application\n");
