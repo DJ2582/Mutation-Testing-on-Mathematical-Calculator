@@ -1,4 +1,4 @@
-# Mutation-Testing-on-Mathematical-Calculator
+# Mutation Testing on Mathematical Calculator
 
 This project is a robust Scientific Calculator application developed in Java. It provides advanced mathematical computation capabilities and ensures high code quality and test coverage through Mutation Testing. The tool is designed to handle a wide range of mathematical operations, making it a versatile tool for students, developers, and researchers alike.
 
